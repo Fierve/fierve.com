@@ -1,17 +1,14 @@
 {
-  "name": "next-js-boilerplate",
+  "name": "fierve.com",
   "version": "1.0.0",
+  "repository": "github:fierve/fierve.com",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "build-stats": "cross-env ANALYZE=true npm run build",
-    "export": "next export",
-    "build-prod": "run-s clean build export",
-    "clean": "rimraf .next out",
-    "lint": "next lint",
-    "build-types": "tsc --noEmit --pretty",
-    "prepare": "husky install"
+    "build": "rm -rf .next dist && next build && next export -o dist",
+    "validate": "npm run validate:lint && npm run validate:tsc",
+    "validate:lint": "next lint",
+    "validate:tsc": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -40,14 +37,11 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.1.5",
-    "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.4.4"
-  },
-  "license": "ISC"
+  }
 }
