@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf .next dist && next build && next export -o dist",
-    "validate": "npm run validate:lint && npm run validate:tsc",
+    "validate": "npm run validate:lint && npm run validate:prettier && npm run validate:tsc",
     "validate:lint": "next lint",
+    "validate:prettier": "prettier --ignore-path .gitignore --check .",
     "validate:tsc": "tsc --noEmit --pretty"
   },
   "dependencies": {
@@ -25,7 +26,6 @@
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "autoprefixer": "10.4.0",
-    "cross-env": "7.0.3",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-airbnb-typescript": "14.0.1",
@@ -37,9 +37,8 @@
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-unused-imports": "1.1.5",
-    "npm-run-all": "4.1.5",
     "postcss": "8.3.11",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "rimraf": "3.0.2",
     "tailwindcss": "2.2.19",
     "typescript": "4.4.4"
