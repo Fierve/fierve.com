@@ -5,41 +5,26 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf .next dist && next build && next export -o dist",
-    "validate": "npm run validate:lint && npm run validate:prettier && npm run validate:tsc",
+    "build": "next build && next export -o dist",
+    "validate": "npm run validate:tsc && npm run validate:lint && npm run validate:prettier",
+    "validate:tsc": "tsc --noEmit",
     "validate:lint": "next lint",
-    "validate:prettier": "prettier --ignore-path .gitignore --check .",
-    "validate:tsc": "tsc --noEmit --pretty"
+    "validate:prettier": "prettier --ignore-path .gitignore --check ."
   },
   "dependencies": {
-    "classnames": "2.3.1",
-    "next": "12.0.2",
-    "next-seo": "4.28.1",
+    "clsx": "1.1.1",
+    "next": "12.0.4",
+    "normalize.css": "8.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "styled-jsx-plugin-postcss": "4.0.1"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/node": "16.11.6",
-    "@types/react": "17.0.33",
-    "@typescript-eslint/eslint-plugin": "4.33.0",
-    "@typescript-eslint/parser": "4.33.0",
-    "autoprefixer": "10.4.0",
+    "@types/react": "17.0.37",
     "eslint": "7.32.0",
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-airbnb-typescript": "14.0.1",
-    "eslint-config-next": "12.0.2",
+    "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.25.2",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.26.1",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-unused-imports": "1.1.5",
-    "postcss": "8.3.11",
+    "eslint-plugin-simple-import-sort": "7.0.0",
     "prettier": "2.5.0",
-    "rimraf": "3.0.2",
-    "tailwindcss": "2.2.19",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   }
 }

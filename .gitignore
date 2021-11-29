@@ -3,7 +3,7 @@
 
 # next.js
 /.next
-/dist
+/tsconfig.tsbuildinfo
 
-# misc
-.DS_Store
+# build
+/dist
