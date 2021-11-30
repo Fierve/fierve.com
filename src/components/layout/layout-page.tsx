@@ -1,9 +1,7 @@
 import * as React from "react";
 
 import { config } from "../../config";
-import { gridCss, gridNumber, sizeCss } from "../../styles";
-import { Dash } from "../base/dash";
-import logo from "./logo.svg";
+import { gridCss, sizeCss } from "../../styles";
 
 export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
   <>
