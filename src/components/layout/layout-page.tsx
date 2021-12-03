@@ -7,7 +7,9 @@ import { Text } from "../base/text";
 export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
   <>
     <div className="layout">
-      <header></header>
+      <header>
+        <Text type="title">Fierve.com</Text>
+      </header>
 
       <main>{children}</main>
 
