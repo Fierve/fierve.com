@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>{config.site.domain}</title>
 
         {/* Icons */}
-        <link rel="icon" type="image/svg" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
 
         {/* Mobile viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
