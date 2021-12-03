@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { config } from "../../config";
 import { gridCss, sizeCss } from "../../styles";
+import { Text } from "../base/text";
 
 export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
   <>
@@ -11,9 +12,11 @@ export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
       <main>{children}</main>
 
       <footer>
-        {config.site.yearFounded}
-        <br />
-        {config.site.companyName}
+        <Text>
+          {config.site.yearFounded}
+          <br />
+          {config.site.companyName}
+        </Text>
       </footer>
     </div>
 

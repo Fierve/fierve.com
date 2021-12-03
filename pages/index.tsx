@@ -1,10 +1,10 @@
 import { NextPage } from "next";
 
-import { gridNumber } from "../src/styles";
+import { Text } from "../src/components/base/text";
 
 const Home: NextPage<{}> = (props) => (
   <>
-    <h1>Fierve.com</h1>
+    <Text type="title">Fierve.com</Text>
 
     <style jsx>{``}</style>
   </>
