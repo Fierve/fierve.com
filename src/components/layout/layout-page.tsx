@@ -1,24 +1,47 @@
 import * as React from "react";
 
 import { config } from "../../config";
-import { gridCss, sizeCss } from "../../styles";
+import { colors, gridCss, sizeCss } from "../../styles";
 import { Text } from "../base/text";
+
+export const LayoutMaxWidth = ({ children }: { children: React.ReactNode }) => (
+  <>
+    <div>{children}</div>
+
+    <style jsx>{`
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: ${sizeCss(400)};
+        max-width: ${sizeCss(600)};
+        margin: 0 auto;
+      }
+    `}</style>
+  </>
+);
 
 export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
   <>
     <div className="layout">
       <header>
-        <Text type="title">Fierve.com</Text>
+        <Text type="title" color="orange">
+          Fierve.com
+        </Text>
       </header>
 
-      <main>{children}</main>
+      <main>
+        <LayoutMaxWidth>{children}</LayoutMaxWidth>
+      </main>
 
       <footer>
-        <Text>
-          {config.site.yearFounded}
-          <br />
-          {config.site.companyName}
-        </Text>
+        <LayoutMaxWidth>
+          <Text>
+            {config.site.yearFounded}
+            <br />
+            {config.site.companyName}
+          </Text>
+        </LayoutMaxWidth>
       </footer>
     </div>
 
@@ -40,8 +63,6 @@ export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
           "footer";
         grid-template-rows: auto 1fr auto;
         grid-template-columns: 1fr;
-        min-width: ${sizeCss(400)};
-        max-width: ${sizeCss(600)};
         min-height: 100vh; // (sticky)
         margin: 0 auto;
         padding: ${gridCss(3)} ${gridCss(2)};
@@ -54,6 +75,7 @@ export const LayoutPage = ({ children }: { children: React.ReactNode }) => (
         align-items: center;
         gap: ${gridCss(1)};
         padding-bottom: ${gridCss(3)};
+        background-color: ${colors.orangeLight};
       }
 
       main {
