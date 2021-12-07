@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import { colors } from "../../styles";
+
 type TextType = "title" | "paragraph" | "text";
 
 const typeToTag: { [key in TextType]: keyof JSX.IntrinsicElements } = {
@@ -8,12 +10,20 @@ const typeToTag: { [key in TextType]: keyof JSX.IntrinsicElements } = {
   text: "span",
 };
 
-export const Text = ({ type = "text", children }: { type?: TextType; children: React.ReactNode }) => {
+export const Text = ({
+  type = "text",
+  color = "black",
+  children,
+}: {
+  type?: TextType;
+  color?: "black" | "orange";
+  children: React.ReactNode;
+}) => {
   const Tag = typeToTag[type];
 
   return (
     <>
-      <Tag className={clsx("text", `text-${type}`)}>{children}</Tag>
+      <Tag className={clsx("text", `text-type-${type}`, `text-color-${color}`)}>{children}</Tag>
 
       <style jsx>{`
         .text {
@@ -21,15 +31,22 @@ export const Text = ({ type = "text", children }: { type?: TextType; children: R
             "Helvetica Neue", sans-serif;
         }
 
-        .text-title {
+        .text-type-title {
           font-size: 32px;
           font-weight: bold;
         }
-        .text-paragraph {
+        .text-type-paragraph {
           font-size: 16px;
         }
-        .text-text {
+        .text-type-text {
           font-size: 16px;
+        }
+
+        .text-color-black {
+          color: ${colors.black};
+        }
+        .text-color-orange {
+          color: ${colors.orange};
         }
       `}</style>
     </>
